@@ -11,6 +11,8 @@ export class AppComponent implements OnInit{
   constructor(private apiService: ApiService) {}
   ngOnInit() {
     this.fetchData();
+    let myObj = { name: 'Skip', breed: 'Labrador' };
+    localStorage.setItem('test', JSON.stringify(myObj));
   }
   fetchData() {
     this.apiService.fetch().subscribe(
