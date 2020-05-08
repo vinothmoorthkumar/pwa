@@ -10,18 +10,9 @@ export class AppComponent implements OnInit{
   items: Array<Item>;
   constructor(private apiService: ApiService) {}
   ngOnInit() {
-    this.fetchData();
-    let myObj = { name: 'Skip', breed: 'Labrador' };
-    localStorage.setItem('test', JSON.stringify(myObj));
+
   }
   fetchData() {
-    this.apiService.fetch().subscribe(
-      (data: Array<Item>) => {
-         console.log(data);
-         this.items = data;
-      }, (err) => {
-        console.log(err);
-      }
-    );
+
   }
 }

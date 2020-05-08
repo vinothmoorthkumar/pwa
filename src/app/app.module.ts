@@ -5,15 +5,20 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { HttpClientModule } from '@angular/common/http';
-import { MatToolbarModule, MatCardModule, MatButtonModule } from  '@angular/material';
+import { MatToolbarModule, MatMenuModule, MatCardModule, MatIconModule, MatButtonModule, MatChipsModule,
+  MatFormFieldModule } from  '@angular/material';
 import { ServiceWorkerModule } from '@angular/service-worker';
 import { environment } from '../environments/environment';
 import { HomeComponent } from './home/home.component';
+import { ScoreboardComponent } from './scoreboard/scoreboard.component';
+import { SettingComponent } from './setting/setting.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    HomeComponent
+    HomeComponent,
+    ScoreboardComponent,
+    SettingComponent
   ],
   imports: [
     BrowserModule,
@@ -23,6 +28,10 @@ import { HomeComponent } from './home/home.component';
     MatToolbarModule,
     MatCardModule,
     MatButtonModule,
+    MatIconModule,
+    MatMenuModule,
+    MatChipsModule,
+    MatFormFieldModule,
     ServiceWorkerModule.register('ngsw-worker.js', { enabled: environment.production })
   ],
   providers: [],
