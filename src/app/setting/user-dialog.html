@@ -1,0 +1,32 @@
+<h1 mat-dialog-title>Add players</h1>
+<div mat-dialog-content>
+    <div class="example-container">
+        <mat-list role="list">
+            <mat-list-item role="listitem">Item 1</mat-list-item>
+            <mat-list-item role="listitem">Item 2</mat-list-item>
+            <mat-list-item role="listitem">Item 3</mat-list-item>
+            <mat-list-item role="listitem">Item 1</mat-list-item>
+            <mat-list-item role="listitem">Item 2</mat-list-item>
+            <mat-list-item role="listitem">Item 3</mat-list-item>
+            <mat-list-item role="listitem">Item 1</mat-list-item>
+            <mat-list-item role="listitem">Item 2</mat-list-item>
+            <mat-list-item role="listitem">Item 3</mat-list-item>
+            <mat-list-item role="listitem">Item 1</mat-list-item>
+            <mat-list-item role="listitem">Item 2</mat-list-item>
+            <mat-list-item role="listitem">Item 3</mat-list-item>
+            <mat-list-item role="listitem">Item 1</mat-list-item>
+            <mat-list-item role="listitem">Item 2</mat-list-item>
+            <mat-list-item role="listitem">Item 3</mat-list-item>
+        </mat-list>
+    </div>
+</div>
+<div mat-dialog-actions>
+    <form [formGroup]="loginForm" (ngSubmit)="onSubmit()" novalidate>
+        <mat-form-field class="full-width">
+            <input matInput placeholder="name" formControlName="username">
+            <mat-icon (click)="add()" matSuffix>add</mat-icon>
+        </mat-form-field>
+    </form>
+    <button mat-button (click)="openDialog()">Create</button>
+    <button mat-button [mat-dialog-close]="data.animal" cdkFocusInitial>Close</button>
+</div>

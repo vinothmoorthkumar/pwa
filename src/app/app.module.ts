@@ -6,12 +6,12 @@ import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { HttpClientModule } from '@angular/common/http';
 import { MatToolbarModule, MatMenuModule, MatCardModule, MatIconModule, MatButtonModule, MatChipsModule,
-  MatFormFieldModule, MatAutocompleteModule } from  '@angular/material';
+  MatFormFieldModule, MatListModule, MatDialogModule, MatInputModule } from  '@angular/material';
 import { ServiceWorkerModule } from '@angular/service-worker';
 import { environment } from '../environments/environment';
 import { HomeComponent } from './home/home.component';
 import { ScoreboardComponent } from './scoreboard/scoreboard.component';
-import { SettingComponent } from './setting/setting.component';
+import { SettingComponent, DialogUser } from './setting/setting.component';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 
 @NgModule({
@@ -19,7 +19,8 @@ import {FormsModule, ReactiveFormsModule} from '@angular/forms';
     AppComponent,
     HomeComponent,
     ScoreboardComponent,
-    SettingComponent
+    SettingComponent,
+    DialogUser
   ],
   imports: [
     BrowserModule,
@@ -34,11 +35,16 @@ import {FormsModule, ReactiveFormsModule} from '@angular/forms';
     MatChipsModule,
     MatFormFieldModule,
     FormsModule,
-    MatAutocompleteModule,
+    MatListModule,
     ReactiveFormsModule,
+    MatDialogModule,
+    MatInputModule,
     ServiceWorkerModule.register('ngsw-worker.js', { enabled: environment.production })
   ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
+  entryComponents: [
+    DialogUser,
+  ],
 })
 export class AppModule { }
