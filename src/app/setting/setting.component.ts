@@ -48,6 +48,10 @@ export class DialogUser {
     console.log('test')
   }
 
+  onSubmit(){
+    console.log('test')
+  }
+
   onNoClick(): void {
     this.dialogRef.close();
   }
