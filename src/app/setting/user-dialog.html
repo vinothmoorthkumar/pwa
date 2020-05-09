@@ -1,32 +1,20 @@
 <h1 mat-dialog-title>Add players</h1>
 <div mat-dialog-content>
     <div class="example-container">
-        <mat-list role="list">
-            <mat-list-item role="listitem">Item 1</mat-list-item>
-            <mat-list-item role="listitem">Item 2</mat-list-item>
-            <mat-list-item role="listitem">Item 3</mat-list-item>
-            <mat-list-item role="listitem">Item 1</mat-list-item>
-            <mat-list-item role="listitem">Item 2</mat-list-item>
-            <mat-list-item role="listitem">Item 3</mat-list-item>
-            <mat-list-item role="listitem">Item 1</mat-list-item>
-            <mat-list-item role="listitem">Item 2</mat-list-item>
-            <mat-list-item role="listitem">Item 3</mat-list-item>
-            <mat-list-item role="listitem">Item 1</mat-list-item>
-            <mat-list-item role="listitem">Item 2</mat-list-item>
-            <mat-list-item role="listitem">Item 3</mat-list-item>
-            <mat-list-item role="listitem">Item 1</mat-list-item>
-            <mat-list-item role="listitem">Item 2</mat-list-item>
-            <mat-list-item role="listitem">Item 3</mat-list-item>
-        </mat-list>
+        <mat-selection-list #list>
+            <mat-list-option *ngFor="let user of userlist" (click)="selectionChange(list)" [value]="user" [selected]="user.selected">
+                {{user.name}}
+            </mat-list-option>
+          </mat-selection-list>
     </div>
 </div>
 <div mat-dialog-actions>
-    <form [formGroup]="loginForm" (ngSubmit)="onSubmit()" novalidate>
+    <form [formGroup]="loginForm" novalidate>
         <mat-form-field class="full-width">
-            <input matInput placeholder="name" formControlName="username">
+            <input matInput placeholder="Name" [(ngModel)]="fullName" formControlName="username">
             <mat-icon (click)="add()" matSuffix>add</mat-icon>
         </mat-form-field>
     </form>
-    <button mat-button>Create</button>
-    <button mat-button [mat-dialog-close]="data.animal" cdkFocusInitial>Close</button>
+    <button mat-button >Close</button>
+    <button mat-button [mat-dialog-close]="data.selectedUser" cdkFocusInitial>Create</button>
 </div>

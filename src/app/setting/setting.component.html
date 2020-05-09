@@ -6,8 +6,9 @@
         </button>
     </div>
     <mat-list role="list">
-        <mat-list-item role="listitem">Item 1</mat-list-item>
-        <mat-list-item role="listitem">Item 2</mat-list-item>
-        <mat-list-item role="listitem">Item 3</mat-list-item>
+        <mat-list-item *ngFor="let user of users;" role="listitem">{{user.name}}</mat-list-item>
     </mat-list>
+    <button (click)="start()" *ngIf="users && users.length>1" mat-raised-button color="primary">
+        Start
+    </button>
 </div>
