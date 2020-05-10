@@ -10,7 +10,7 @@ import { MatToolbarModule, MatMenuModule, MatCardModule, MatIconModule, MatButto
 import { ServiceWorkerModule } from '@angular/service-worker';
 import { environment } from '../environments/environment';
 import { HomeComponent } from './home/home.component';
-import { ScoreboardComponent } from './scoreboard/scoreboard.component';
+import { ScoreboardComponent, DialogScore } from './scoreboard/scoreboard.component';
 import { SettingComponent, DialogUser } from './setting/setting.component';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 
@@ -20,7 +20,8 @@ import {FormsModule, ReactiveFormsModule} from '@angular/forms';
     HomeComponent,
     ScoreboardComponent,
     SettingComponent,
-    DialogUser
+    DialogUser,
+    DialogScore
   ],
   imports: [
     BrowserModule,
@@ -46,6 +47,7 @@ import {FormsModule, ReactiveFormsModule} from '@angular/forms';
   bootstrap: [AppComponent],
   entryComponents: [
     DialogUser,
+    DialogScore
   ],
 })
 export class AppModule { }

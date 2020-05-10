@@ -15,6 +15,6 @@
             <mat-icon (click)="add()" matSuffix>add</mat-icon>
         </mat-form-field>
     </form>
-    <button mat-button >Close</button>
+    <button mat-button (click)='onNoClick()' >Close</button>
     <button mat-button [mat-dialog-close]="data.selectedUser" cdkFocusInitial>Create</button>
 </div>

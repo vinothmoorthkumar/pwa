@@ -1,0 +1,11 @@
+<h1 mat-dialog-title>Add players</h1>
+<div mat-dialog-actions>
+    <form [formGroup]="loginForm" novalidate>
+        <mat-form-field *ngFor="let user of currentGame.users;" class="full-width">
+            <mat-label>{{user.name}}</mat-label>
+            <input type='number' matInput placeholder="Name" [(ngModel)]=user.score formControlName="username">
+        </mat-form-field>
+    </form>
+    <button mat-button (click)='onNoClick()'>Close</button>
+    <button mat-button [mat-dialog-close]="data" cdkFocusInitial>Create</button>
+</div>
